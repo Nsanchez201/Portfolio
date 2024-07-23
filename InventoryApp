@@ -1,0 +1,94 @@
+--
+-- display customer information
+--
+sys.htp.p('<div class="CustomerInfo">');
+  sys.htp.p('<strong>Customer:</strong>');  
+  sys.htp.p('<p>');
+  sys.htp.p(sys.htf.escape_sc(:P3_REQUEST_NUMBER) || ' ' ||
+                sys.htf.escape_sc(:P3_DATE_REQUESTED) || '<br />');
+  sys.htp.p(sys.htf.escape_sc(:P3_TEACHER) || '<br />');
+    sys.htp.p(sys.htf.escape_sc(:P3_ROOM_NUMBER) || '<br />');
+  sys.htp.p('</p>');
+sys.htp.p('</div>');
+
+-- display products
+--
+sys.htp.p('<div class="Products" >');
+sys.htp.p('<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<thead>
+<tr><th class="left">Product</th><th>Quantity</th><th></th></tr>
+</thead>
+<tbody>');
+for c1 in (select SUPPLY_NUMBER, DESCRIPTION,  1 QUANTITY, 'Add to Cart' add_to_order
+from SUPPLY
+where QUANTITY_IN_STOCK != 0
+order by DESCRIPTION) loop
+sys.htp.p('<tr><td class="left">'||sys.htf.escape_sc(c1.DESCRIPTION)||'</td>
+<td>'||trim(to_char(1)) || '</td>
+<td><a href="'||apex_util.prepare_url('f?p=&APP_ID.:4:'||:app_session||':ADD:::P4_SUPPLY_NUMBER:'|| c1.SUPPLY_NUMBER)||'" class="t-Button t-Button--simple t-Button--hot"><span>Add<i class="iR"></i></span></a></td>
+</tr>');
+end loop;
+sys.htp.p('</tbody></table>');
+sys.htp.p('</div>');
+
+-- display current order
+--
+sys.htp.p('<div class="Products" >');
+sys.htp.p('<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<thead>
+<tr><th class="left">Current Order</th></tr>
+</thead>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>');
+declare
+    c number := 0; t number := 0;
+begin
+-- loop over cart values
+for c1 in (select c001 pid, c002 i,  count(c002) q, 'Remove' remove
+from apex_collections
+where collection_name = 'ORDER'
+group by c001, c002
+order by c002)
+loop
+sys.htp.p('<div class="CartItem">
+<a href="'||apex_util.prepare_url('f?p=&APP_ID.:4:&SESSION.:REMOVE:::P4_SUPPLY_NUMBER:'||sys.htf.escape_sc(c1.pid))||'"><img src="#IMAGE_PREFIX#delete.gif" alt="Remove from cart" title="Remove from cart" /></a>&nbsp;&nbsp;
+'||sys.htf.escape_sc(c1.i)||'
+<span>Quantity: '||c1.q||'</span>
+</div>');
+c := c + 1;
+t := t + 1;
+end loop;
+sys.htp.p('</tbody></table>');
+if c > 0 then
+    sys.htp.p('<div class="CartTotal">
+    <p>Items: <span>'||c||'</span></p>
+    <p class="CartTotal">Total: <span>'||trim(to_char(t))||'</span></p>
+    </div>');
+else
+   sys.htp.p('<div class="alertMessage info" style="margin-top: 8px;">');
+     sys.htp.p('<img src="#IMAGE_PREFIX#f_spacer.gif">');
+     sys.htp.p('<div class="innerMessage">');
+       sys.htp.p('<h3>Note</h3>');
+       sys.htp.p('<p>You have no items in your current order.</p>');
+     sys.htp.p('</div>');
+   sys.htp.p('</div>');
+end if;
+sys.htp.p('</div>');
+end;
+
+begin
+for x in (select c.REQUEST_NUMBER, c.DATE_REQUESTED, c.TEACHER, c.ROOM_NUMBER from ORDERS c
+where c.REQUEST_NUMBER = :P5_REQUEST_NUMBER)
+loop
+    htp.p('<span style="font-size:16px;font-weight:bold;">ORDER #' || sys.htf.escape_sc(:P5_REQUEST_NUMBER) || '</span><br />');
+    htp.p('<span style="font-size:16px;font-weight:bold;">NAME: ' || sys.htf.escape_sc(x.TEACHER) || '</span><br />');
+    htp.p('<span style="font-size:16px;font-weight:bold;">REQUEST DATE: ' || sys.htf.escape_sc(x.DATE_REQUESTED) || '</span><br />');
+    htp.p('<span style="font-size:16px;font-weight:bold;">ROOM: ' || sys.htf.escape_sc(x.ROOM_NUMBER) || '</span><br />');
+    htp.p('<span style="font-size:16px;">Order will be processed in the order that was received' || '</span><br />');
+end loop;
+
+end;
+select P.SUPPLY_NUMBER, P.DESCRIPTION, P.QUANTITY_IN_STOCK, R.REQUEST_NUMBER, R.QUANTITY   
+from SUPPLY P, ORDER_HISTORY R
+where P.SUPPLY_NUMBER = R.SUPPLY_NUMBER and R.REQUEST_NUMBER = :P5_REQUEST_NUMBER
