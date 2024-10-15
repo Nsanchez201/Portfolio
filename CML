@@ -1,0 +1,129 @@
+main class="wp-block-group" style="margin-top:0">
+  
+  <!-- Banner Section (Full Width, No Padding) -->
+  
+  <div class="wp-block-group alignfull" style="padding: var(--wp--preset--spacing--50);background-color: #F9F9F9">
+    <div class="wp-block-group alignwide" style="text-align:center">
+      <h2 class="wp-block-heading" style="color: #FFA500;font-size: 2em;font-weight: bold">Our Services</h2>
+      <div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
+
+      <!-- Responsive Grid for Services -->
+      <div class="wp-block-columns services-grid" style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 20px">
+        
+        <!-- Service 1 -->
+        <div class="wp-block-column service-item" style="padding: 20px;background-color: #FFFFFF;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #1E90FF;font-weight: bold">Language</h3>
+          <p style="color: #2B2B2B">Our providers are fluent in both Spanish and English, ensuring accessible care for all.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="wp-block-column service-item" style="padding: 20px;background-color: #FFFFFF;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #FFA500;font-weight: bold">Primary Care</h3>
+          <p style="color: #2B2B2B">Our providers specialize in care for adults. Our team connects patients to the right programs for their health, including support navigating insurance and coordinating specialist care.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="wp-block-column service-item" style="padding: 20px;background-color: #FFFFFF;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #1E90FF;font-weight: bold">Wellness &amp; Preventive Care</h3>
+          <p style="color: #2B2B2B">Wellness and prevention are key components of our care model. Our doctors work with patients to design a care plan that keeps you happy and healthy.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="wp-block-column service-item" style="padding: 20px;background-color: #FFFFFF;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #FFA500;font-weight: bold">Laboratory &amp; Testing Services</h3>
+          <p style="color: #2B2B2B">In-center lab and testing services are part of our care model. We offer routine tests such as Urinalysis, Metabolic panel, A1C, and Lipid panel in addition to other tests illnesses.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="wp-block-column service-item" style="padding: 20px;background-color: #FFFFFF;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #1E90FF;font-weight: bold">Insurance Accepted </h3>
+          <p style="color: #2B2B2B">Please call to confirm that your insurance is accepted.
+          <br /><h3 class="wp-block-heading" style="color: #1E90FF;font-weight: bold">Insurance Accepted </h3>Llama para verificar que su seguro es aceptado.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Unified About Us, Mission, and Vision Section -->
+  <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);background-color: #FFFFFF">
+    <div class="wp-block-group alignwide" style="text-align:center">
+
+      <!-- About Us Section -->
+      <h2 class="wp-block-heading" style="color: #FFA500;font-size: 2em;font-weight: bold">About Us</h2>
+      <div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
+
+      <div class="wp-block-column" style="padding: 20px">
+        <p style="color: #2B2B2B;font-size: 1.1em">
+          Welcome to Consultorio Médico Latino! Established with the purpose of providing culturally sensitive and compassionate care, we serve as a healthcare haven for the diverse communities in North Charleston and beyond. Our team of dedicated professionals is committed to not only treating illnesses but also fostering wellness and preventative care. With a patient-centered approach, we aim to build long-lasting relationships with our patients based on trust, respect, and personalized attention.
+        </p>
+      </div>
+
+      <!-- Responsive Mission and Vision Section -->
+      <div class="wp-block-columns mission-vision-grid" style="display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 20px;justify-content: center;margin-top: var(--wp--preset--spacing--40)">
+        
+        <!-- Mission Column -->
+        <div class="wp-block-column mission-item" style="padding: 30px;background-color: #EAF4FC;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #FFA500;font-weight: bold">Mission</h3>
+          <p style="color: #2B2B2B">At our family medicine clinic in North Charleston, we are dedicated to providing high-quality, patient-centered healthcare. Our mission is to promote health and well-being through prevention, effective disease treatment, and compassionate, personalized care. We collaborate with our patients to achieve their long-term health goals while upholding the highest ethical and professional standards. We continuously improve our services to meet the evolving needs of our community, ensuring that every patient feels valued, heard, and cared for.</p>
+        </div>
+
+        <!-- Vision Column -->
+        <div class="wp-block-column vision-item" style="padding: 30px;background-color: #FDF2E9;border-radius: 10px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
+          <h3 class="wp-block-heading" style="color: #1E90FF;font-weight: bold">Vision</h3>
+          <p style="color: #2B2B2B">Our family medicine clinic in North Charleston aims to be a comprehensive, high-quality healthcare center for individuals and families in our community. We strive to lead in promoting health and wellness by offering services focused on prevention, effective disease treatment, and continuous support throughout our patients’ lifetimes. Our goal is to be recognized as a model of compassion and medical excellence, where everyone feels valued, heard, and cared for.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="wp-block-group alignfull" style="background-color: #4169e1;padding: 30px 20px;color: #FFFFFF;text-align: center">
+    <div class="wp-block-group alignwide">
+      
+      <!-- Slogan -->
+      <h2 style="font-size: 1.8em;font-weight: bold;margin-bottom: 10px">Donde la Salud y la Familia Son Nuestros Mayores Tesoros</h2>
+      
+      <!-- Contact Info (Responsive Links) -->
+      <div style="display: flex;flex-wrap: wrap;justify-content: center;gap: 15px;margin-top: 20px">
+        
+        <!-- Address Link -->
+        <div style="flex: 1 1 100%;max-width: 300px">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=2810+Ashley+Phosphate+Rd,+North+Charleston,+SC+29418" target="_blank" style="color: #FFFFFF;text-decoration: none">
+            <p style="margin: 5px 0"><strong>📍 Address:</strong> 2810 Ashley Phosphate Rd, North Charleston, SC 29418</p>
+          </a>
+        </div>
+
+        <!-- Telephone Link -->
+        <div style="flex: 1 1 100%;max-width: 300px">
+          <a href="tel:+18435537744" style="color: #FFFFFF;text-decoration: none">
+            <p style="margin: 5px 0"><strong>📞 Telephone:</strong> (843) 553-7744</p>
+          </a>
+        </div>
+
+        <!-- Email Link -->
+        <div style="flex: 1 1 100%;max-width: 300px">
+          <a href="mailto:s.cml2810@gmail.com" style="color: #FFFFFF;text-decoration: none">
+            <p style="margin: 5px 0"><strong>✉️ Email:</strong> s.cml2810@gmail.com</p>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Clinic Hours -->
+      <div style="margin-top: 20px">
+        <h3 style="font-size: 1.5em;font-weight: bold">Clinic Hours</h3>
+        <p style="margin: 5px 0">Mon - Wed: 9:00 AM - 5:00 PM</p>
+        <p style="margin: 5px 0">Thurs: 9:00 AM - 1:00 PM</p>
+        <p style="margin: 5px 0">Fri: 9:00 AM - 5:00 PM</p>
+        <p style="margin: 5px 0">Sat: 9:00 AM - 1:00 PM</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+</main>
